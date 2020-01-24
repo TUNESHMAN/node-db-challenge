@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const theProjectIWnt = await getProjectById(req.params.id)
+    const theProjectIWant = await getProjectById(req.params.id)
     res.json(theProjectIWant)
   } catch (e) {
     console.log(e);

@@ -3,10 +3,10 @@ exports.seed = function(knex) {
   return knex('projects').del()
     .then(function () {
       return knex('projects').insert([
-        {Name: 'Write code', description: 'Helps you stay current', Completed: true},
-        {Name: 'Give a speech', Completed: false},
-        {Name: 'Mine Bitumen', Description: 'Used to san disk 03', Completed: false},
-        {Name: 'X-Force Down', Description: 'Used to board card 04', Completed: false}
+        {Name: 'Write code', description: "Helps you stay current", Completed: true},
+        {Name: 'Give a speech', description: "For effective communication", Completed: false},
+        {Name: 'Download an app', description: "We need it for the transfer of materials", Completed: false},
+        {Name: 'Do some designs', Completed: false}
       ]);
     });
 };
