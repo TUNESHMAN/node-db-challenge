@@ -28,9 +28,9 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { title, contents } = req.body;
-    const id = await insertNewPost({ title, contents })
-    res.json({ message: `new post with id ${id} was created` })
+    const { Name, description} = req.body;
+    const id = await insertNewProjectt({ Name, description })
+    res.json({ message: `new project with id ${id} was created` })
   } catch (e) {
     console.log(e);
   }
@@ -38,10 +38,10 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
-  const { title, contents } = req.body;
+  const { Name, description } = req.body;
   try {
-    const count = await replacePostById({ id, title, contents })
-    res.json({ message: `${count} posts got updated`})
+    const count = await replaceProjectById({ id, Name, description })
+    res.json({ message: `${count} project got updated`})
   } catch (e) {
     console.log(e);
   }
@@ -49,9 +49,9 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const count = await deletePostById(req.params.id)
+    const count = await deleteProjectById(req.params.id)
     res.json({
-      message: `${count} posts got deleted`
+      message: `${count} project got deleted`
     })
   } catch (e) {
     console.log(e);
