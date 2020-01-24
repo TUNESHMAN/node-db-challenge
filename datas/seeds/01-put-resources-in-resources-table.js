@@ -1,10 +1,10 @@
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex("resources")
+  return knex('resources')
     .truncate()
     .then(function() {
       // Inserts resources seed entries
-      return knex("table_name").insert([
+      return knex('resources').insert([
         { resource_name: "Television", description: "Helps you stay current" },
         {
           resource_name: "Mobile phone",
