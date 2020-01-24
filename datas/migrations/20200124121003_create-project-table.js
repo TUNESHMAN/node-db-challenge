@@ -1,5 +1,5 @@
 exports.up = function(knex) {
-  // create the resources table
+  // / create the resources table
   return knex.schema.createTable("resources", table => {
     table.increments(); // This creates column named "id" which is the primary key.
     table
@@ -11,6 +11,6 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-    // destroys the tables if it exists
-    return knex.schema.dropTableIfExists('resource')
+  // Drop the resources table if it exists
+  return knex.schema.dropTableIfExist("resources");
 };
